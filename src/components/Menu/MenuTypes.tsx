@@ -14,14 +14,20 @@ export interface IIngredient {
     amount: string;
 }
 
+export interface IItemTime {
+    preparing: string;
+    cooking?: string;
+    waiting?: string;
+}
+
 export interface IMenuItem {
     title: string;
     description: string;
     price: IItemPrice;
     type: EItemTypes;
     ingredients: IIngredient[];
-    totalCalories: number;
-    timeToCook: number;
+    totalKCalories: number;
+    times: IItemTime;
     starCount: number;
     ratingCount: number;
 }

@@ -1,19 +1,20 @@
-import { IMenuItem } from './MenuTypes';
+import { type IMenuItem } from './MenuTypes';
 
 function GenerateMenuItems({ title, items }: { title: string; items: IMenuItem[] }) {
     return (
-        <div className='grid gap-y-5'>
+        <div className='space-y-5'>
+            <h2 className='pt-5 text-center'>{title}</h2>
+
             {items.map((value, index) => {
                 return (
-                    <div className='' key={index}>
-                        <div className=''>
-                            <div className='flex justify-between'>
-                                <p className='font-bold text-lg'>{value.title}</p>
-                                <p className='font-bold text-lg'>
-                                    {value.price.currency}
-                                    {value.price.value}
-                                </p>
-                            </div>
+                    <div key={index}>
+                        <div className='flex justify-between text-lg font-bold'>
+                            <span>{value.title}</span>
+
+                            <span>
+                                {value.price.currency}
+                                {value.price.value}
+                            </span>
                         </div>
 
                         <p>{value.description}</p>
@@ -38,7 +39,7 @@ export default function MenuCard({
             <div className='max-w-4xl'>
                 <h1 className='text-center'>Menukaart</h1>
 
-                <div className='grid divide-y gap-y-10'>
+                <div className='grid gap-y-10 divide-y'>
                     {starterItems && <GenerateMenuItems title='Voorgerechten' items={starterItems} />}
 
                     {mainItems && <GenerateMenuItems title='Hoofdgerechten' items={mainItems} />}

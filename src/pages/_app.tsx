@@ -1,36 +1,75 @@
-import { withTRPC } from '@trpc/next';
-import type { AppRouter } from '../server/router';
-import type { AppType } from 'next/dist/shared/lib/utils';
-import superjson from 'superjson';
+import { useEffect } from 'react';
+import { type AppType } from 'next/app';
+import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
-import '../styles/globals.css';
 
-const MyApp: AppType = ({ Component, pageProps: { session, ...pageProps } }) => {
+import { api } from '~/utils/api';
+import Footer from '~/components/Home/Footer/Footer';
+import NavigationBar from '~/components/Home/NavBar/NavBar';
+
+import '~/styles/globals.css';
+import '~/styles/globals.css';
+
+let reloadInterval: NodeJS.Timer;
+
+function lazyReload() {
+    clearInterval(reloadInterval);
+    reloadInterval = setInterval(() => {
+        if (document.hasFocus()) {
+            window.location.reload();
+        }
+    }, 100);
+}
+
+function forcePageReload(registration: ServiceWorkerRegistration) {
+    if (!navigator.serviceWorker.controller) {
+        return;
+    }
+
+    if (registration.waiting) {
+        registration.waiting.postMessage('skipWaiting');
+        return;
+    }
+
+    function listenInstalledStateChange() {
+        registration.installing?.addEventListener('statechange', function () {
+            if (this.state === 'installed' && registration.waiting) {
+                registration.waiting.postMessage('skipWaiting');
+            } else if (this.state === 'activated') {
+                lazyReload();
+            }
+        });
+    }
+
+    if (registration.installing) {
+        listenInstalledStateChange();
+        return;
+    }
+
+    registration.addEventListener('updatefound', listenInstalledStateChange);
+}
+
+async function registerServiceWorker() {
+    if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+        const registration = await navigator.serviceWorker.register('/sw.js');
+        forcePageReload(registration);
+    }
+}
+
+const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { session, ...pageProps } }) => {
+    useEffect(() => {
+        void registerServiceWorker();
+    }, []);
+
     return (
         <SessionProvider session={session}>
+            <NavigationBar />
+
             <Component {...pageProps} />
+
+            <Footer title='Little Italy' />
         </SessionProvider>
     );
 };
 
-const getBaseUrl = () => {
-    if (typeof window !== 'undefined') {
-        return '';
-    }
-    if (process.browser) return '';
-    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-
-    return `http://localhost:${process.env.PORT ?? 3000}`;
-};
-
-export default withTRPC<AppRouter>({
-    config({ ctx }) {
-        const url = `${getBaseUrl()}/api/trpc`;
-
-        return {
-            url,
-            transformer: superjson,
-        };
-    },
-    ssr: false,
-})(MyApp);
+export default api.withTRPC(MyApp);
