@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        @apply dark:[color-scheme:dark];
+    }
+
+    * {
+        @apply scroll-smooth dark:border-dark;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    body * {
+        @apply transition-all duration-150 ease-out;
+    }
+
+    h1 {
+        @apply mb-6 text-3xl font-bold;
+    }
+
+    h2 {
+        @apply mb-6 text-2xl font-bold;
+    }
+
+    h2>svg {
+        @apply h-8 w-8;
+    }
+
+    img {
+        @apply rounded object-cover;
+    }
+
+    path {
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+
+    a>svg {
+        @apply h-6 w-6;
+    }
+
+    button>svg {
+        @apply h-6 w-6;
+    }
+
+    input[type='checkbox'] {
+        @apply checkbox-primary checkbox;
+    }
+
+    input[type='radio'] {
+        @apply radio-primary radio radio-sm;
+    }
+}
+
+@layer components {
+    .accordion {
+        @apply border-t py-4;
+    }
+
+    .accordion summary {
+        @apply flex cursor-pointer select-none items-center justify-between font-semibold;
+    }
+
+    .accordion div {
+        @apply prose pt-4 opacity-0;
+    }
+
+    .accordion[open] div {
+        @apply opacity-100;
+    }
+
+    .accordion[open] svg {
+        @apply rotate-180;
+    }
+
+    .btn {
+        @apply rounded normal-case;
+    }
+}
+
+@layer utilities {
+    .prose {
+        @apply text-current;
+    }
+}
