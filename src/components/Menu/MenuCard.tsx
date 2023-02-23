@@ -7,17 +7,22 @@ function GenerateMenuItems({ title, items }: { title: string; items: IMenuItem[]
 
             {items.map((value, index) => {
                 return (
-                    <div key={index}>
-                        <div className='flex justify-between text-lg font-bold'>
-                            <span>{value.title}</span>
-
-                            <span>
-                                {value.price.currency}
-                                {value.price.value}
-                            </span>
+                    <div className='grid grid-cols-[1fr_auto] gap-x-5' key={index}>
+                        <div>
+                            <p className='text-lg font-bold'>{value.title}</p>
+                            <p>{value.description}</p>
                         </div>
 
-                        <p>{value.description}</p>
+                        <div>
+                            <p className='grid text-lg font-bold'>
+                                <span>
+                                    {value.price.currency}
+                                    {value.price.value}
+                                </span>
+
+                                <span>{value.times.preparing} min.</span>
+                            </p>
+                        </div>
                     </div>
                 );
             })}
@@ -37,9 +42,9 @@ export default function MenuCard({
     return (
         <div className='flex flex-col items-center justify-center'>
             <div className='max-w-4xl'>
-                <h1 className='text-center'>Menukaart</h1>
+                <h1 className='pt-5 text-center text-6xl font-bold tracking-wide'>Menukaart</h1>
 
-                <div className='grid gap-y-10 divide-y'>
+                <div className='grid gap-y-10 divide-y pt-52'>
                     {starterItems && <GenerateMenuItems title='Voorgerechten' items={starterItems} />}
 
                     {mainItems && <GenerateMenuItems title='Hoofdgerechten' items={mainItems} />}

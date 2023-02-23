@@ -1,10 +1,10 @@
-export interface INavigationLink {
+export interface INavItem {
     title: string;
     url: string;
     icon?: JSX.Element;
 }
 
-export interface INavigation {
+export interface INavList {
     title: string;
-    items: INavigationLink[];
+    items: INavItem[];
 }

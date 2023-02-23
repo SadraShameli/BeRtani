@@ -7,8 +7,7 @@ import { api } from '~/utils/api';
 import Footer from '~/components/Home/Footer/Footer';
 import NavigationBar from '~/components/Home/NavBar/NavBar';
 
-import '~/styles/globals.css';
-import '~/styles/globals.css';
+import '~/styles/main.css';
 
 let reloadInterval: NodeJS.Timer;
 

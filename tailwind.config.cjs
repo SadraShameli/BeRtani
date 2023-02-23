@@ -29,7 +29,10 @@ module.exports = {
                 },
             },
             margin: {
-                hero: '100px',
+                hero: '20rem',
+            },
+            colors: {
+                'nav-hover': '#8b939b',
             },
         },
     },

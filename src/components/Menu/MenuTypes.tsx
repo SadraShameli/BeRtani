@@ -15,9 +15,9 @@ export interface IIngredient {
 }
 
 export interface IItemTime {
-    preparing: string;
-    cooking?: string;
-    waiting?: string;
+    preparing: number;
+    cooking?: number;
+    waiting?: number;
 }
 
 export interface IMenuItem {

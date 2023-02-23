@@ -1,6 +1,30 @@
-import { type INavigation, type INavigationLink } from './FooterTypes';
+import Routes from '~/utils/routes';
+import { type INavList, type INavItem } from './FooterTypes';
 
-export const NavigationList: INavigation[] = [
+export const NavList: INavItem[] = [
+    {
+        title: 'Menu',
+        url: '',
+    },
+    {
+        title: 'Reservation',
+        url: '',
+    },
+    {
+        title: 'Privacy policy',
+        url: '',
+    },
+    {
+        title: 'Contact',
+        url: '',
+    },
+    {
+        title: 'About us',
+        url: '',
+    },
+];
+
+export const NavListLong: INavList[] = [
     {
         title: 'Company',
         items: [
@@ -40,7 +64,7 @@ export const NavigationList: INavigation[] = [
         items: [
             {
                 title: 'Terms and Conditions',
-                url: '/terms-and-conditions',
+                url: Routes.termsAndConditions,
             },
             {
                 title: 'Privacy policy',
@@ -57,7 +81,7 @@ export const NavigationList: INavigation[] = [
         items: [
             {
                 title: 'Terms and Conditions',
-                url: '/terms-and-conditions',
+                url: Routes.termsAndConditions,
             },
             {
                 title: 'Privacy policy',
@@ -71,7 +95,7 @@ export const NavigationList: INavigation[] = [
     },
 ];
 
-export const PaymentIcons: INavigationLink[] = [
+export const PaymentIcons: INavItem[] = [
     {
         title: 'iDeal',
         url: '',
@@ -205,7 +229,7 @@ export const PaymentIcons: INavigationLink[] = [
     */
 ];
 
-export const SocialIcons: INavigationLink[] = [
+export const SocialIcons: INavItem[] = [
     {
         title: 'Instagram',
         url: '',

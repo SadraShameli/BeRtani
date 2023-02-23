@@ -1,0 +1,27 @@
+@tailwind components;
+
+@layer components {
+    .accordion {
+        @apply border-t py-4;
+    }
+
+    .accordion summary {
+        @apply flex cursor-pointer select-none items-center justify-between font-semibold;
+    }
+
+    .accordion div {
+        @apply prose pt-4 opacity-0;
+    }
+
+    .accordion[open] div {
+        @apply opacity-100;
+    }
+
+    .accordion[open] svg {
+        @apply rotate-180;
+    }
+
+    .btn {
+        @apply rounded normal-case;
+    }
+}

@@ -37,7 +37,7 @@ const starterItems: IMenuItem[] = [
         ],
         totalKCalories: 210,
         times: {
-            preparing: '10 min.',
+            preparing: 10,
         },
         starCount: 3.5,
         ratingCount: 384,
@@ -63,7 +63,7 @@ const starterItems: IMenuItem[] = [
         ],
         totalKCalories: 90,
         times: {
-            preparing: '10 min.',
+            preparing: 10,
         },
         starCount: 3.5,
         ratingCount: 4,
@@ -104,7 +104,7 @@ const starterItems: IMenuItem[] = [
         ],
         totalKCalories: 260,
         times: {
-            preparing: '30 min.',
+            preparing: 30,
         },
         starCount: 4.5,
         ratingCount: 10,
@@ -169,9 +169,9 @@ const mainItems: IMenuItem[] = [
         ],
         totalKCalories: 1010,
         times: {
-            preparing: '25 min',
-            cooking: '14 min.',
-            waiting: '3 uur',
+            preparing: 25,
+            cooking: 14,
+            waiting: 180,
         },
         starCount: 5,
         ratingCount: 2,
@@ -224,7 +224,7 @@ const mainItems: IMenuItem[] = [
         ],
         totalKCalories: 640,
         times: {
-            preparing: '25 min',
+            preparing: 25,
         },
         starCount: 3.5,
         ratingCount: 185,
@@ -274,7 +274,7 @@ const mainItems: IMenuItem[] = [
         ],
         totalKCalories: 735,
         times: {
-            preparing: '15 min',
+            preparing: 15,
         },
         starCount: 4.5,
         ratingCount: 117,
@@ -318,8 +318,8 @@ const dessertItems: IMenuItem[] = [
         ],
         totalKCalories: 330,
         times: {
-            preparing: '15 min.',
-            waiting: '5 uur',
+            preparing: 15,
+            waiting: 300,
         },
         starCount: 4.5,
         ratingCount: 15,
@@ -345,7 +345,7 @@ const dessertItems: IMenuItem[] = [
         ],
         totalKCalories: 90,
         times: {
-            preparing: '10 min.',
+            preparing: 10,
         },
         starCount: 3.5,
         ratingCount: 4,
@@ -402,8 +402,8 @@ const dessertItems: IMenuItem[] = [
         ],
         totalKCalories: 540,
         times: {
-            preparing: '25 min.',
-            waiting: '6 uur',
+            preparing: 25,
+            waiting: 360,
         },
         starCount: 4.5,
         ratingCount: 27,

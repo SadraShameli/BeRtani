@@ -1,0 +1,22 @@
+@tailwind base;
+
+@layer base {
+    :root {
+        @apply dark:[color-scheme:dark];
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    path {
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+}
