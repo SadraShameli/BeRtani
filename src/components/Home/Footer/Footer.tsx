@@ -21,7 +21,7 @@ export default function Footer({ title }: { title: string }) {
                     <div className='flex gap-x-8'>
                         {SocialIcons.map((value, index) => {
                             return (
-                                <Link className='h-6 w-6 hover:text-nav-hover' key={index} href={value.url} title={value.title}>
+                                <Link className='h-5 w-5 hover:text-nav-hover' key={index} href={value.url} title={value.title}>
                                     {value.icon}
                                 </Link>
                             );
@@ -29,7 +29,7 @@ export default function Footer({ title }: { title: string }) {
                     </div>
                 </div>
 
-                <p className='mt-10'>© 2023 - 2023 {title}, Inc. All rights reserved.</p>
+                <p className='mt-10 text-sm'>© 2023 - 2023 {title}, Inc. All rights reserved.</p>
             </footer>
         </div>
     );

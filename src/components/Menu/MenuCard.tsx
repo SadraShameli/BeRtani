@@ -41,16 +41,14 @@ export default function MenuCard({
 }) {
     return (
         <div className='flex flex-col items-center justify-center'>
-            <div className='max-w-4xl'>
-                <h1 className='pt-5 text-center text-6xl font-bold tracking-wide'>Menukaart</h1>
+            <h1 className='pt-5 text-center text-6xl font-bold tracking-wide'>Menukaart</h1>
 
-                <div className='grid gap-y-10 divide-y pt-52'>
-                    {starterItems && <GenerateMenuItems title='Voorgerechten' items={starterItems} />}
+            <div className='grid gap-y-10 divide-y pt-52'>
+                {starterItems && <GenerateMenuItems title='Voorgerechten' items={starterItems} />}
 
-                    {mainItems && <GenerateMenuItems title='Hoofdgerechten' items={mainItems} />}
+                {mainItems && <GenerateMenuItems title='Hoofdgerechten' items={mainItems} />}
 
-                    {dessertItems && <GenerateMenuItems title='Nagerechten' items={dessertItems} />}
-                </div>
+                {dessertItems && <GenerateMenuItems title='Nagerechten' items={dessertItems} />}
             </div>
         </div>
     );

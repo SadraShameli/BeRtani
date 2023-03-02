@@ -24,8 +24,7 @@ module.exports = {
                 screens: {
                     sm: '600px',
                     md: '728px',
-                    lg: '984px',
-                    xl: '1152px',
+                    lg: '980px',
                 },
             },
             margin: {
@@ -67,13 +66,5 @@ module.exports = {
         ],
         logs: false,
     },
-    plugins: [
-        require('@tailwindcss/typography'),
-        require('daisyui'),
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        function ({ addVariant }) {
-            addVariant('children', '& > *'), addVariant('all-children', '& *');
-        },
-    ],
+    plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };

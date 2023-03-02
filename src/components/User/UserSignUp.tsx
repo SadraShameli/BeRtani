@@ -5,12 +5,12 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import Card from '../Card';
 import { CheckBox } from '../CheckBox';
 import { InputField, InputInfoText } from '../InputField';
-import { UserSignUpSchema, UserSignUpForm } from './UserTypes';
+import { UserSignUpSchema, type UserSignUpForm } from './UserTypes';
 
 import { api } from '../../utils/api';
 import Routes from '../../utils/routes';
@@ -101,7 +101,7 @@ export default function UserSignUp() {
                         </InputField>
 
                         <CheckBox text='I accept the' {...register('terms')}>
-                            <Link className='link-primary hover:link pl-1' title='Terms and Conditions' type='button' href={Routes.termsAndConditions}>
+                            <Link className='link-primary pl-1 hover:link' title='Terms and Conditions' type='button' href={Routes.termsAndConditions}>
                                 Terms and Conditions
                             </Link>
                         </CheckBox>
