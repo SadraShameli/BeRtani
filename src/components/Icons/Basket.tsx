@@ -1,6 +1,6 @@
-import { type IIconProps } from '~/types/Icon';
+import { type SVGProps } from 'react';
 
-export default function BasketIcon(props: IIconProps) {
+export default function BasketIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg fill='none' viewBox='0 0 24 24' {...props}>
             <path d='M3.5 4.5H5.05848C5.7542 4.5 6.10206 4.5 6.36395 4.68876C6.62584 4.87752 6.73584 5.20753 6.95585 5.86754L7.5 7.5' />

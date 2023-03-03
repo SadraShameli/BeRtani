@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,16 +6,17 @@ import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
-import Card from '../Card';
-import { CheckBox } from '../CheckBox';
-import { InputField, InputInfoText } from '../InputField';
-import { UserSignInSchema, type UserSignInForm } from './UserTypes';
+import Card from '~/components/Card';
+import { CheckBox } from '~/components/CheckBox';
+import { InputField, InputInfoText } from '~/components/InputField';
 
-import Routes from '../../utils/routes';
-import AppleIcon from '../Icons/Apple';
-import GoogleIcon from '../Icons/Google';
-import TwitchIcon from '../Icons/Twitch';
-import SignInIcon from '../Icons/SignIn';
+import AppleIcon from '~/components/Icons/Apple';
+import GoogleIcon from '~/components/Icons/Google';
+import TwitchIcon from '~/components/Icons/Twitch';
+import SignInIcon from '~/components/Icons/SignIn';
+
+import Routes from '~/utils/routes';
+import { UserSignInSchema, type UserSignInForm } from './UserTypes';
 
 export default function UserSignIn() {
     const [errorMessage, setErrorMessage] = useState('');

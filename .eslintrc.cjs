@@ -1,5 +1,5 @@
 /** @type {import("eslint").Linter.Config} */
-module.exports = {
+const config = {
     overrides: [
         {
             extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
@@ -25,3 +25,5 @@ module.exports = {
         ],
     },
 };
+
+module.exports = config;

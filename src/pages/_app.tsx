@@ -4,9 +4,6 @@ import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
 import { api } from '~/utils/api';
-import Footer from '~/components/Home/Footer/Footer';
-import NavigationBar from '~/components/Home/NavBar/NavBar';
-
 import '~/styles/main.css';
 
 let reloadInterval: NodeJS.Timer;
@@ -62,11 +59,7 @@ const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { s
 
     return (
         <SessionProvider session={session}>
-            <NavigationBar />
-
             <Component {...pageProps} />
-
-            <Footer title='Little Italy' />
         </SessionProvider>
     );
 };

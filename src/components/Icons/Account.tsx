@@ -1,6 +1,6 @@
-import { type IIconProps } from '~/types/Icon';
+import { type SVGProps } from 'react';
 
-export default function AccountIcon(props: IIconProps) {
+export default function AccountIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg fill='none' viewBox='0 0 24 24' {...props}>
             <circle cx='12' cy='7.25' r='5.73' />

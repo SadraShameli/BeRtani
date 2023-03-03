@@ -17,6 +17,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                newyork: ['NewYork'],
             },
             container: {
                 center: true,
@@ -25,14 +26,15 @@ module.exports = {
                     sm: '600px',
                     md: '728px',
                     lg: '980px',
+                    xl: '1152px',
                 },
             },
             margin: {
                 hero: '20rem',
             },
             colors: {
-                'nav-hover': '#8b939b',
-            },
+                'hover': '#8b939b',
+            }
         },
     },
     daisyui: {

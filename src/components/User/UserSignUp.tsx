@@ -7,17 +7,18 @@ import { signIn } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
-import Card from '../Card';
-import { CheckBox } from '../CheckBox';
-import { InputField, InputInfoText } from '../InputField';
-import { UserSignUpSchema, type UserSignUpForm } from './UserTypes';
+import Card from '~/components/Card';
+import { CheckBox } from '~/components/CheckBox';
+import { InputField, InputInfoText } from '~/components/InputField';
 
-import { api } from '../../utils/api';
-import Routes from '../../utils/routes';
-import AppleIcon from '../Icons/Apple';
-import GoogleIcon from '../Icons/Google';
-import TwitchIcon from '../Icons/Twitch';
-import AccountInfoIcon from '../Icons/AccountInfo';
+import AppleIcon from '~/components/Icons/Apple';
+import GoogleIcon from '~/components/Icons/Google';
+import TwitchIcon from '~/components/Icons/Twitch';
+import AccountInfoIcon from '~/components/Icons/AccountInfo';
+
+import { UserSignUpSchema, type UserSignUpForm } from './UserTypes';
+import { api } from '~/utils/api';
+import Routes from '~/utils/routes';
 
 export default function UserSignUp() {
     const router = useRouter();

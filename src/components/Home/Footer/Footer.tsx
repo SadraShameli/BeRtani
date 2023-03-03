@@ -6,12 +6,12 @@ export default function Footer({ title }: { title: string }) {
         <div className='mt-52 border-t'>
             <footer className='container grid place-items-center py-20'>
                 <div className='grid place-items-center gap-y-14'>
-                    <p className='text-4xl font-bold'>{title}</p>
+                    <p className='font-newyork text-4xl font-bold tracking-widest'>{title}</p>
 
                     <div className='space-x-8 divide-x'>
                         {NavList.map((value, index) => {
                             return (
-                                <Link className='pl-8 hover:text-nav-hover' key={index} href={value.url} title={value.title}>
+                                <Link className='pl-8 hover:text-hover' key={index} href={value.url} title={value.title}>
                                     {value.title}
                                 </Link>
                             );
@@ -21,7 +21,7 @@ export default function Footer({ title }: { title: string }) {
                     <div className='flex gap-x-8'>
                         {SocialIcons.map((value, index) => {
                             return (
-                                <Link className='h-5 w-5 hover:text-nav-hover' key={index} href={value.url} title={value.title}>
+                                <Link className='h-5 w-5 hover:text-hover' key={index} href={value.url} title={value.title}>
                                     {value.icon}
                                 </Link>
                             );

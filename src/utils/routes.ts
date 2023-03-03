@@ -8,10 +8,13 @@ const Routes = {
     account: '/account/',
     checkout: '/checkout/',
     favorites: '/favorites/',
+    menu: '/menu/',
+    booking: '/booking/',
+    recipes: '/recipes/',
 } as const;
 
 import { z } from 'zod';
-import formatErrors from './zod/formatErrors.mjs';
+import formatErrors from './zod/formatErrors.js';
 
 function createSchema(obj: Record<string, string>): z.ZodObject<z.ZodRawShape> {
     const urlType = z.string().min(2).startsWith('/').endsWith('/');
