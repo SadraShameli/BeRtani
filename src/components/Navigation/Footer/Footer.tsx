@@ -3,12 +3,12 @@ import { NavList, SocialIcons } from './FooterContent';
 
 export default function Footer({ title }: { title: string }) {
     return (
-        <div className='mt-52 border-t'>
-            <footer className='container grid place-items-center py-20'>
-                <div className='grid place-items-center gap-y-14'>
+        <footer className='mt-52 border-t'>
+            <div className='container py-20'>
+                <div className='grid place-items-center gap-y-14 '>
                     <p className='font-newyork text-4xl font-bold tracking-widest'>{title}</p>
 
-                    <div className='space-x-8 divide-x'>
+                    <div className='space-x-8'>
                         {NavList.map((value, index) => {
                             return (
                                 <Link className='pl-8 hover:text-hover' key={index} href={value.url} title={value.title}>
@@ -29,8 +29,8 @@ export default function Footer({ title }: { title: string }) {
                     </div>
                 </div>
 
-                <p className='mt-10 text-sm'>© 2023 - 2023 {title}, Inc. All rights reserved.</p>
-            </footer>
-        </div>
+                <p className='mt-10 text-center text-sm'>© 2023 - 2023 {title}, Inc. All rights reserved.</p>
+            </div>
+        </footer>
     );
 }

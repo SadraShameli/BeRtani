@@ -17,6 +17,7 @@ export const commonSchema = {
     terms: z.literal(true, {
         errorMap: () => ({ message: 'You must accept Terms and Conditions' }),
     }),
+    remember: z.literal(true),
     phone: z.string().regex(/^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/, {
         message: 'Invalid phone number',
     }),

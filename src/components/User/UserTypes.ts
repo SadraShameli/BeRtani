@@ -4,6 +4,7 @@ import { commonSchema } from '~/utils/zod/commonSchema';
 export const UserSignInSchema = z.object({
     email: commonSchema.email,
     password: commonSchema.password,
+    remember: commonSchema.remember,
 });
 
 export type UserSignInForm = z.infer<typeof UserSignInSchema>;

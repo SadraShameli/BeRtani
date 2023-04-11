@@ -3,7 +3,10 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
+    experimental: {
+        optimizeUniversalDefaults: true,
+    },
     content: ['./src/**/*.{ts,tsx}'],
     theme: {
         borderRadius: {
@@ -29,12 +32,9 @@ module.exports = {
                     xl: '1152px',
                 },
             },
-            margin: {
-                hero: '20rem',
-            },
             colors: {
-                'hover': '#8b939b',
-            }
+                hover: '#8b939b',
+            },
         },
     },
     daisyui: {
@@ -68,5 +68,10 @@ module.exports = {
         ],
         logs: false,
     },
+    future: {
+        hoverOnlyWhenSupported: true,
+    },
     plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };
+
+module.exports = config;

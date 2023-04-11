@@ -1,19 +1,12 @@
+import Section from '~/layouts/Section';
 import MenuCard from '~/components/Menu/MenuCard';
-import Footer from '~/components/Home/Footer/Footer';
-import Header from '~/components/Home/Header/Header';
 import { EItemTypes, type IMenuItem } from '~/components/Menu/MenuTypes';
 
 export default function Menu() {
     return (
-        <>
-            <Header />
-
-            <main className='container'>
-                <MenuCard starterItems={starterItems} mainItems={mainItems} dessertItems={dessertItems} />
-            </main>
-
-            <Footer title='Little Italy' />
-        </>
+        <Section>
+            <MenuCard starterItems={starterItems} mainItems={mainItems} dessertItems={dessertItems} />
+        </Section>
     );
 }
 

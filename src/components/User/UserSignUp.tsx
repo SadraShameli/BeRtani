@@ -8,7 +8,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import Card from '~/components/Card';
-import { CheckBox } from '~/components/CheckBox';
 import { InputField, InputInfoText } from '~/components/InputField';
 
 import AppleIcon from '~/components/Icons/Apple';
@@ -50,79 +49,80 @@ export default function UserSignUp() {
     };
 
     return (
-        <div className='grid place-items-center'>
-            <form className='mt-hero w-full max-w-lg' onSubmit={handleSubmit(onSubmit)}>
-                <Card>
-                    <h2 className='flex items-center justify-between'>
-                        Create your account
-                        <AccountInfoIcon />
-                    </h2>
+        <form className='relative mx-auto max-w-lg' onSubmit={handleSubmit(onSubmit)}>
+            <Card>
+                <h2 className='flex items-center justify-between'>
+                    Create your account
+                    <AccountInfoIcon />
+                </h2>
 
-                    <div className='grid gap-5'>
-                        <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('google', { callbackUrl: '/' })}>
-                            <GoogleIcon className='h-6 w-6' />
-                            Sign in with Google
+                <div className='grid gap-5'>
+                    <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('google', { callbackUrl: '/' })}>
+                        <GoogleIcon className='h-6 w-6' />
+                        Sign up with Google
+                    </button>
+
+                    <div className='grid gap-5 sm:grid-cols-2 '>
+                        <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('apple', { callbackUrl: '/' })}>
+                            <AppleIcon className='h-6 w-6' />
+                            Sign up with Apple
                         </button>
 
-                        <div className='grid gap-5 sm:grid-cols-2 '>
-                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('apple', { callbackUrl: '/' })}>
-                                <AppleIcon className='h-6 w-6' />
-                                Sign in with Apple
-                            </button>
+                        <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('twitch', { callbackUrl: '/' })}>
+                            <TwitchIcon className='h-6 w-6' />
+                            Sign up with Twitch
+                        </button>
+                    </div>
 
-                            <button className='btn-outline btn gap-2' type='button' onClick={() => signIn('twitch', { callbackUrl: '/' })}>
-                                <TwitchIcon className='h-6 w-6' />
-                                Sign in with Twitch
-                            </button>
-                        </div>
+                    <div className='divider'>or</div>
 
-                        <div className='divider'>or</div>
-
-                        <div className='grid grid-cols-2 gap-5'>
-                            <InputField autoComplete='given-name' title='First name' {...register('firstName')}>
-                                {errors.firstName && <InputInfoText>{errors.firstName?.message}</InputInfoText>}
-                            </InputField>
-
-                            <InputField autoComplete='family-name' title='Last name' {...register('lastName')}>
-                                {errors.lastName && <InputInfoText>{errors.lastName?.message}</InputInfoText>}
-                            </InputField>
-                        </div>
-
-                        <InputField autoComplete='email' placeholder='you@domain.com' title='Email address' type='email' {...register('email')}>
-                            {errors.email && <InputInfoText>{errors.email?.message}</InputInfoText>}
-                            {errorMessage && <InputInfoText>{errorMessage}</InputInfoText>}
+                    <div className='grid grid-cols-2 gap-5'>
+                        <InputField autoComplete='given-name' title='First name' {...register('firstName')}>
+                            {errors.firstName && <InputInfoText>{errors.firstName?.message}</InputInfoText>}
                         </InputField>
 
-                        <InputField autoComplete='new-password' title='Password' type='password' {...register('password')}>
-                            {errors.password && <InputInfoText>{errors.password?.message}</InputInfoText>}
+                        <InputField autoComplete='family-name' title='Last name' {...register('lastName')}>
+                            {errors.lastName && <InputInfoText>{errors.lastName?.message}</InputInfoText>}
                         </InputField>
+                    </div>
 
-                        <InputField autoComplete='new-password' title='Confirm password' type='password' {...register('confirmPassword')}>
-                            {errors.confirmPassword && <InputInfoText>{errors.confirmPassword?.message}</InputInfoText>}
-                        </InputField>
+                    <InputField autoComplete='email' placeholder='you@domain.com' title='Email address' type='email' {...register('email')}>
+                        {errors.email && <InputInfoText>{errors.email?.message}</InputInfoText>}
+                        {errorMessage && <InputInfoText>{errorMessage}</InputInfoText>}
+                    </InputField>
 
-                        <CheckBox text='I accept the' {...register('terms')}>
-                            <Link className='link-primary pl-1 hover:link' title='Terms and Conditions' type='button' href={Routes.termsAndConditions}>
+                    <InputField autoComplete='new-password' title='Password' type='password' {...register('password')}>
+                        {errors.password && <InputInfoText>{errors.password?.message}</InputInfoText>}
+                    </InputField>
+
+                    <InputField autoComplete='new-password' title='Confirm password' type='password' {...register('confirmPassword')}>
+                        {errors.confirmPassword && <InputInfoText>{errors.confirmPassword?.message}</InputInfoText>}
+                    </InputField>
+
+                    <label>
+                        <input type='checkbox' {...register('terms')} />
+                        <span>
+                            I accept the
+                            <Link className='link-primary pl-1 hover:link' type='button' href={Routes.termsAndConditions}>
                                 Terms and Conditions
                             </Link>
-                        </CheckBox>
+                        </span>
+                    </label>
 
-                        {errors.terms && <InputInfoText>{errors.terms?.message}</InputInfoText>}
+                    {errors.terms && <InputInfoText>{errors.terms?.message}</InputInfoText>}
 
-                        <button className='btn-primary btn' title='Create an account' type='submit'>
-                            Create an account
-                        </button>
+                    <button className='btn-primary btn' type='submit'>
+                        Create an account
+                    </button>
 
-                        <div className='flex gap-2'>
-                            <p>Already have an account?</p>
-
-                            <Link className='link-primary link' title='Sign in page' type='button' href={Routes.signIn}>
-                                Sign in here
-                            </Link>
-                        </div>
+                    <div className='flex gap-2'>
+                        <span>Already have an account?</span>
+                        <Link className='link-primary link' type='button' href={Routes.signIn}>
+                            Sign in here
+                        </Link>
                     </div>
-                </Card>
-            </form>
-        </div>
+                </div>
+            </Card>
+        </form>
     );
 }

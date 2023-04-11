@@ -3,50 +3,23 @@
 @import 'utilities.css';
 @import 'components.css';
 
-@tailwind base;
-
-@layer base {
-    * {
-        @apply dark:border-dark;
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
     }
+}
 
-    body {
-        @apply text-black dark:text-white;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body * {
-        @apply transition-all duration-150 ease-out;
-    }
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
 
-    h1 {
-        @apply mb-6 text-3xl font-bold;
-    }
-
-    h2 {
-        @apply mb-6 text-2xl font-bold;
-    }
-
-    h2 > svg {
-        @apply h-8 w-8;
-    }
-
-    img {
-        @apply rounded object-cover;
-    }
-
-    a > svg {
-        @apply h-6 w-6;
-    }
-
-    button > svg {
-        @apply h-6 w-6;
-    }
-
-    input[type='checkbox'] {
-        @apply checkbox-primary checkbox;
-    }
-
-    input[type='radio'] {
-        @apply radio-primary radio radio-sm;
-    }
+path {
+    stroke-linejoin: round;
+    stroke-linecap: round;
 }

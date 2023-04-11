@@ -1,10 +1,15 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { type AppType } from 'next/app';
 import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
 import { api } from '~/utils/api';
 import '~/styles/main.css';
+
+import HomeHeader from '~/components/Home/Header';
+import Header from '~/components/Navigation/Header/Header';
+import Footer from '~/components/Navigation/Footer/Footer';
 
 let reloadInterval: NodeJS.Timer;
 
@@ -53,13 +58,26 @@ async function registerServiceWorker() {
 }
 
 const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { session, ...pageProps } }) => {
+    const router = useRouter();
+
     useEffect(() => {
         void registerServiceWorker();
     }, []);
 
     return (
         <SessionProvider session={session}>
-            <Component {...pageProps} />
+            {router.route === '/' ? (
+                <>
+                    <HomeHeader />
+                    <Component {...pageProps} />
+                </>
+            ) : (
+                <>
+                    <Header />
+                    <Component {...pageProps} />
+                    <Footer title='Little Italy' />
+                </>
+            )}
         </SessionProvider>
     );
 };

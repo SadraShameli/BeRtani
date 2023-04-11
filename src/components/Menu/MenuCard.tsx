@@ -40,7 +40,7 @@ export default function MenuCard({
     dessertItems?: IMenuItem[];
 }) {
     return (
-        <div className='flex flex-col items-center justify-center'>
+        <>
             <h1 className='pt-5 text-center text-6xl font-bold tracking-wide'>Menukaart</h1>
 
             <div className='grid gap-y-10 divide-y pt-52'>
@@ -50,6 +50,6 @@ export default function MenuCard({
 
                 {dessertItems && <GenerateMenuItems title='Nagerechten' items={dessertItems} />}
             </div>
-        </div>
+        </>
     );
 }

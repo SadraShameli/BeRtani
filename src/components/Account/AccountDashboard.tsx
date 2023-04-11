@@ -14,9 +14,11 @@ interface IDashboardProps {
 
 export default function AccountDashboard({ name, email, image }: IDashboardProps) {
     return (
-        <div className='flex md:divide-x'>
+        <div className='container flex md:divide-x'>
             <div className='hidden gap-10 pr-16 md:grid'>
-                <div className='grid place-items-center'>{image && <Image src={image} width={96} height={96} quality={100} alt='Profile picture' />}</div>
+                <div className='grid place-items-center'>
+                    {image && <Image className='' src={image} width={96} height={96} quality={100} alt='Profile picture' priority />}
+                </div>
 
                 <div className='pt-10'>
                     <p className='mb-5 font-semibold'>Your account</p>
