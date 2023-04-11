@@ -10,6 +10,7 @@ import '~/styles/main.css';
 import HomeHeader from '~/components/Home/Header';
 import Header from '~/components/Navigation/Header/Header';
 import Footer from '~/components/Navigation/Footer/Footer';
+import { SiteInto } from '~/data/Site';
 
 let reloadInterval: NodeJS.Timer;
 
@@ -75,7 +76,7 @@ const MyApp: AppType<{ session: Session | null }> = ({ Component, pageProps: { s
                 <>
                     <Header />
                     <Component {...pageProps} />
-                    <Footer title='Little Italy' />
+                    <Footer title={SiteInto.title} text={SiteInto.copyright} />
                 </>
             )}
         </SessionProvider>

@@ -11,7 +11,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 
 import { env } from '~/env.mjs';
 import { prisma } from '~/server/db';
-import Routes from '../utils/routes';
+import Routes from '../utils/route';
 
 declare module 'next-auth' {
     interface Session extends DefaultSession {

@@ -1,4 +1,4 @@
-import { type IMenuItem } from './MenuTypes';
+import type { IMenuItem, IMenuItems } from './MenuTypes';
 
 function GenerateMenuItems({ title, items }: { title: string; items: IMenuItem[] }) {
     return (
@@ -30,25 +30,17 @@ function GenerateMenuItems({ title, items }: { title: string; items: IMenuItem[]
     );
 }
 
-export default function MenuCard({
-    starterItems,
-    mainItems,
-    dessertItems,
-}: {
-    starterItems?: IMenuItem[];
-    mainItems?: IMenuItem[];
-    dessertItems?: IMenuItem[];
-}) {
+export default function MenuCard({ items }: { items: IMenuItems }) {
     return (
         <>
             <h1 className='pt-5 text-center text-6xl font-bold tracking-wide'>Menukaart</h1>
 
             <div className='grid gap-y-10 divide-y pt-52'>
-                {starterItems && <GenerateMenuItems title='Voorgerechten' items={starterItems} />}
+                {items.starters && <GenerateMenuItems title='Voorgerechten' items={items.starters} />}
 
-                {mainItems && <GenerateMenuItems title='Hoofdgerechten' items={mainItems} />}
+                {items.mainDishes && <GenerateMenuItems title='Hoofdgerechten' items={items.mainDishes} />}
 
-                {dessertItems && <GenerateMenuItems title='Nagerechten' items={dessertItems} />}
+                {items.dessert && <GenerateMenuItems title='Nagerechten' items={items.dessert} />}
             </div>
         </>
     );

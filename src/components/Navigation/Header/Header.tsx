@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Routes from '~/utils/routes';
+import Routes from '~/utils/route';
 
 import HomeIcon from '~/components/Icons/Home';
 import BasketIcon from '~/components/Icons/Basket';

@@ -1,10 +1,10 @@
-import Routes from '~/utils/routes';
+import Routes from '~/utils/route';
 import { type INavList, type INavItem } from './FooterTypes';
 
 export const NavList: INavItem[] = [
     {
         title: 'Menu',
-        url: '',
+        url: Routes.menu,
     },
     {
         title: 'Reservation',
@@ -20,7 +20,7 @@ export const NavList: INavItem[] = [
     },
     {
         title: 'About us',
-        url: '',
+        url: Routes.about,
     },
 ];
 

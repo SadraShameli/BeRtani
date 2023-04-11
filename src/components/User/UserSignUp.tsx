@@ -17,7 +17,7 @@ import AccountInfoIcon from '~/components/Icons/AccountInfo';
 
 import { UserSignUpSchema, type UserSignUpForm } from './UserTypes';
 import { api } from '~/utils/api';
-import Routes from '~/utils/routes';
+import Routes from '~/utils/route';
 
 export default function UserSignUp() {
     const router = useRouter();

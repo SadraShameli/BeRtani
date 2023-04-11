@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NavList, SocialIcons } from './FooterContent';
 
-export default function Footer({ title }: { title: string }) {
+export default function Footer({ title, text }: { title: string; text: string }) {
     return (
         <footer className='mt-52 border-t'>
             <div className='container py-20'>
@@ -29,7 +29,7 @@ export default function Footer({ title }: { title: string }) {
                     </div>
                 </div>
 
-                <p className='mt-10 text-center text-sm'>© 2023 - 2023 {title}, Inc. All rights reserved.</p>
+                <p className='mt-10 text-center text-sm'>{text}</p>
             </div>
         </footer>
     );

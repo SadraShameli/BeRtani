@@ -14,7 +14,7 @@ import GoogleIcon from '~/components/Icons/Google';
 import TwitchIcon from '~/components/Icons/Twitch';
 import SignInIcon from '~/components/Icons/SignIn';
 
-import Routes from '~/utils/routes';
+import Routes from '~/utils/route';
 import { UserSignInSchema, type UserSignInForm } from './UserTypes';
 
 export default function UserSignIn() {
