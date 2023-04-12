@@ -29,4 +29,5 @@ export interface IMenuItems {
     starters?: IMenuItem[];
     mainDishes?: IMenuItem[];
     dessert?: IMenuItem[];
+    drinks?: IMenuItem[];
 }

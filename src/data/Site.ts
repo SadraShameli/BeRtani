@@ -1,25 +1,23 @@
 import { type ISiteProps } from '~/types/Site';
 
 export const SiteInto: ISiteProps = {
-    title: 'Be Rtani',
+    title: 'Little Italy',
     address: '203 Venice Blvd. CA 90291. USA',
     number: '+1 310-823-5396',
-    email: 'eat@bertani.com',
+    email: 'eat@littleitaly.com',
     description: 'Quality first',
-    logoDescription: '© Be Rtani - Sinds 2023',
-    copyright: '© 2023 - 2023 Be Rtani, Inc. All rights reserved.',
-    meta: 'Be Rtani',
-    about: `Welkom bij ons Italiaanse restaurant, waar we u graag verwelkomen in een warme en gastvrije sfeer. Bij ons draait alles om de authentieke Italiaanse keuken, gemaakt met de beste ingrediënten en volgens traditionele recepten.
+    logoDescription: '© Little Italy - Sinds 2023',
+    copyright: '© 2023 - 2023 Little Italy, Inc. All rights reserved.',
+    meta: 'Little Italy',
+    about: `Bent u op zoek naar de meest authentieke Italiaanse culinaire ervaring? Zoek dan niet verder! Ons Italiaanse restaurant is dé plek waar u moet zijn. Wij bieden onze gasten niet alleen de beste kwaliteit ingrediënten en traditionele Italiaanse gerechten, maar ook een unieke en onvergetelijke ervaring die u elders niet zult vinden.
 
-Onze chefs hebben een passie voor het creëren van smaakvolle gerechten die recht doen aan de Italiaanse culinaire cultuur. Ons menu biedt een verscheidenheid aan gerechten, van verse pasta's tot heerlijke vlees- en visgerechten. We gebruiken alleen de meest verse ingrediënten om de smaken van Italië tot leven te brengen op uw bord.
+Onze chef-kok is opgeleid in Italië en is gepassioneerd over de Italiaanse keuken. Hij gebruikt alleen de beste ingrediënten van lokale en internationale producenten en bereidt elk gerecht met zorg en precisie. Ons menu biedt een scala aan gerechten die de traditionele Italiaanse smaken combineren met moderne twists en innovatieve combinaties.
 
-Naast ons menu bieden we ook een uitgebreide wijnkaart met de beste Italiaanse wijnen die perfect passen bij onze gerechten. Onze attente en professionele bediening zorgt ervoor dat uw dinerervaring compleet is.
+Naast onze uitstekende keuken bieden we ook een warme en gastvrije sfeer. Ons restaurant is ontworpen met de Italiaanse cultuur en stijl in gedachten, waardoor u zich direct thuis zult voelen. Onze medewerkers zijn vriendelijk en professioneel en zullen er alles aan doen om uw verblijf bij ons zo aangenaam mogelijk te maken.
 
-We zijn gevestigd in een mooie omgeving en bieden een gezellige ambiance waar u kunt genieten van een heerlijke maaltijd met vrienden, familie of collega's. Ons restaurant is geschikt voor zowel kleine als grote groepen en we hebben ook een privéruimte beschikbaar voor speciale gelegenheden.
+Bij ons Italiaanse restaurant kunt u terecht voor verschillende gelegenheden: een romantisch diner voor twee, een gezellig diner met vrienden en familie, of een zakelijke bijeenkomst. Ons restaurant biedt de perfecte ambiance voor elke gelegenheid.
 
-Of u nu op zoek bent naar een romantisch diner voor twee, een gezellige avond uit met vrienden of een zakelijke bijeenkomst, ons Italiaanse restaurant biedt voor elk wat wils.
-
-We kijken ernaar uit u te verwelkomen in ons restaurant en u te laten genieten van de smaken van Italië. Reserveringen kunnen worden gemaakt via onze website, per e-mail of telefonisch.`,
+Kom langs bij ons Italiaanse restaurant en ontdek waarom we de beste keuze zijn voor uw volgende culinaire ervaring.`,
 };
 
 export const Routes = {
